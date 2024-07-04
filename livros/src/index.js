@@ -3,9 +3,11 @@ const express = require("express")
 const route_titulo = require("./routes/titulos/titulos.js")
 const route_preco = require("./routes/precos/precos.js")
 const route_foto = require("./routes/foto/foto.js")
+const cors = require("cors")
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 
 app.use("/api/v1/livros",route_titulo)
