@@ -81,7 +81,7 @@ route_carrinho.delete("/removerlivro/:id",(req,res) => {
 })
 
 route_carrinho.put("/atualizarlivro/:id",(req,res) => {
-    console.log(req.body);
+    //console.log(req.body);
     data.query(`update saraivacarrinhodb.carrinho set quantidade = ${req.body.carrinhoQuantidade}, total = ${req.body.carrinhoTotal} where idcarrinho = ?`, req.params.id, (error, result) => {
         if (error) {
             return res.status(500).send({ msg: "Não foi possível atualizar o carrinho " +error})
